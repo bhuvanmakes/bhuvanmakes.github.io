@@ -1,0 +1,17 @@
+{%- assign project = include.project -%}
+<article class="card">
+  <a class="card-media" href="{{ project.url | relative_url }}">
+    {%- if project.hero %}
+    <img src="{{ project.hero | relative_url }}" alt="{{ project.hero_alt | default: project.title }}" width="700" height="560">
+    {%- else %}
+    <div class="card-placeholder">{{ project.title }}</div>
+    {%- endif %}
+  </a>
+  <div class="card-body">
+    {%- if project.status %}
+    <p class="badge">{{ project.status }}</p>
+    {%- endif %}
+    <h3><a class="card-title" href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+    <p>{{ project.summary }}</p>
+  </div>
+</article>

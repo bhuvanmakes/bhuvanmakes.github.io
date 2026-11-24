@@ -1,0 +1,82 @@
+{%- comment -%}
+  Content kit. Pass the document as `item`.
+  Render a link only when the field is present and non-empty.
+  Lists (tweets, instagram_updates, shorts) render only if they have entries.
+
+  Standard kit fields:
+    instructable, tweets, youtube, instagram_updates, shorts, arxiv, github, blog
+  Optional extra:
+    hackster
+
+  TODO: Leave `github` empty until the repository is published under
+  https://github.com/bhuvanmakes. Do not use github.com/bhuvanbagwe URLs.
+{%- endcomment -%}
+{%- assign item = include.item -%}
+{%- assign tweets = item.tweets -%}
+{%- assign instagram_updates = item.instagram_updates -%}
+{%- assign shorts = item.shorts -%}
+{%- assign show_kit = false -%}
+{%- if item.instructable and item.instructable != "" %}{% assign show_kit = true %}{% endif -%}
+{%- if item.hackster and item.hackster != "" %}{% assign show_kit = true %}{% endif -%}
+{%- if tweets and tweets.size > 0 %}{% assign show_kit = true %}{% endif -%}
+{%- if item.youtube and item.youtube != "" %}{% assign show_kit = true %}{% endif -%}
+{%- if instagram_updates and instagram_updates.size > 0 %}{% assign show_kit = true %}{% endif -%}
+{%- if shorts and shorts.size > 0 %}{% assign show_kit = true %}{% endif -%}
+{%- if item.arxiv and item.arxiv != "" %}{% assign show_kit = true %}{% endif -%}
+{%- if item.github and item.github != "" %}{% assign show_kit = true %}{% endif -%}
+{%- if item.blog and item.blog != "" %}{% assign show_kit = true %}{% endif -%}
+{%- if show_kit -%}
+<section class="kit" aria-labelledby="kit-heading-{{ item.title | slugify }}">
+  <h2 id="kit-heading-{{ item.title | slugify }}">Also on</h2>
+  <ul>
+    {%- if item.instructable and item.instructable != "" %}
+    <li><span class="kit-label">Instructable</span> <a href="{{ item.instructable }}">Write-up</a></li>
+    {%- endif %}
+    {%- if item.hackster and item.hackster != "" %}
+    <li><span class="kit-label">Hackster</span> <a href="{{ item.hackster }}">Project page</a></li>
+    {%- endif %}
+    {%- if tweets and tweets.size > 0 %}
+    <li>
+      <span class="kit-label">Progress tweets</span>
+      <ul class="sublist">
+        {%- for url in tweets %}
+        <li><a href="{{ url }}">{{ url }}</a></li>
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- endif %}
+    {%- if item.youtube and item.youtube != "" %}
+    <li><span class="kit-label">YouTube video</span> <a href="{{ item.youtube }}">Watch</a></li>
+    {%- endif %}
+    {%- if instagram_updates and instagram_updates.size > 0 %}
+    <li>
+      <span class="kit-label">Instagram updates</span>
+      <ul class="sublist">
+        {%- for url in instagram_updates %}
+        <li><a href="{{ url }}">Update {{ forloop.index }}</a></li>
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- endif %}
+    {%- if shorts and shorts.size > 0 %}
+    <li>
+      <span class="kit-label">Short videos</span>
+      <ul class="sublist">
+        {%- for url in shorts %}
+        <li><a href="{{ url }}">Short {{ forloop.index }}</a></li>
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- endif %}
+    {%- if item.arxiv and item.arxiv != "" %}
+    <li><span class="kit-label">arXiv paper</span> <a href="{{ item.arxiv }}">Paper</a></li>
+    {%- endif %}
+    {%- if item.github and item.github != "" %}
+    <li><span class="kit-label">GitHub</span> <a href="{{ item.github }}">Repository</a></li>
+    {%- endif %}
+    {%- if item.blog and item.blog != "" %}
+    <li><span class="kit-label">Blog post</span> <a href="{{ item.blog | relative_url }}">Read the write-up</a></li>
+    {%- endif %}
+  </ul>
+</section>
+{%- endif -%}

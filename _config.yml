@@ -1,0 +1,115 @@
+# Bhuvan Makes — personal site for GitHub Pages
+# Live URL once published: https://bhuvanmakes.github.io
+# Repo name (create later on the bhuvanmakes account): bhuvanmakes.github.io
+#
+# GitHub profile (header/footer): https://github.com/bhuvanmakes only.
+# Project repositories are not public on bhuvanmakes yet. Leave each
+# project's `github` kit field empty until the repo is published there.
+# Do not link github.com/bhuvanbagwe — those repositories are private
+# and the URLs now 404.
+#
+# Do not add LinkedIn. Do not feature OpenExG-C5, AirCalibre or GoodOne.
+# Public name only: Bhuvan Makes.
+
+title: Bhuvan Makes
+description: >-
+  I design and build hardware end to end — electronics, biosensing,
+  and the messy bits in between.
+url: https://bhuvanmakes.github.io
+baseurl: ""
+lang: en
+timezone: Asia/Kolkata
+
+author:
+  name: Bhuvan Makes
+  email: bhuvanmakes@gmail.com
+
+# One-line bio (approved wording, 24 Nov 2026 plan).
+tagline: >-
+  I design and build hardware end to end — electronics, biosensing,
+  and the messy bits in between.
+
+# Longer About text (approved wording, 24 Nov 2026 plan).
+about: >-
+  I'm Bhuvan Makes, an independent hardware maker and engineering student
+  in Mumbai. I design, prototype and document electronics myself. Recent
+  work includes AlgaeSense, an autonomous algae cultivation system that
+  uses a microscope and on-device vision, plus Morse Monkey, radio and
+  Meshtastic builds, and an open e-ink reader still being documented.
+  I publish write-ups on Instructables and Hackster, and code on GitHub.
+  I also make YouTube videos about making things. For boards, RoadTests
+  or collaborations: bhuvanmakes@gmail.com.
+
+location: Mumbai
+
+email: bhuvanmakes@gmail.com
+
+# Link hub (no LinkedIn). Order follows the 24 Nov 2026 plan.
+links:
+  - label: GitHub
+    url: https://github.com/bhuvanmakes
+  - label: Instructables
+    url: https://www.instructables.com/member/bhuvanmakes/
+  - label: Hackster
+    url: https://www.hackster.io/bhuvanmakes
+  - label: YouTube
+    url: https://www.youtube.com/@Bhuvanmakes
+  - label: Hackaday
+    url: https://hackaday.io/bhuvanmakes
+  - label: X
+    url: https://x.com/Maker_Bhuvan
+
+# Hero buttons on the landing page (a shorter subset).
+hero_links:
+  - label: GitHub
+    url: https://github.com/bhuvanmakes
+  - label: Instructables
+    url: https://www.instructables.com/member/bhuvanmakes/
+  - label: Hackster
+    url: https://www.hackster.io/bhuvanmakes
+  - label: YouTube
+    url: https://www.youtube.com/@Bhuvanmakes
+
+permalink: /blog/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .gitignore
+
+sass:
+  style: compressed

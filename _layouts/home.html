@@ -1,0 +1,58 @@
+---
+layout: default
+---
+<div class="wrap">
+  <section class="hero">
+    <img class="portrait" src="{{ '/assets/img/placeholder-portrait.svg' | relative_url }}" width="120" height="120" alt="Portrait placeholder. A new photograph is being taken.">
+    <div>
+      <h1>Bhuvan Makes</h1>
+      <p class="location">{{ site.location }}</p>
+      <p class="tagline">{{ site.tagline }}</p>
+      <div class="actions">
+        {% for item in site.hero_links %}
+          <a class="btn" href="{{ item.url }}">{{ item.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="featured-heading">
+    <div class="section-head">
+      <h2 id="featured-heading">Featured projects</h2>
+      <a class="more" href="{{ '/projects/' | relative_url }}">All projects</a>
+    </div>
+    <div class="card-grid">
+      {% assign featured = site.projects | sort: "order" %}
+      {% for project in featured %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="writing-heading">
+    <div class="section-head">
+      <h2 id="writing-heading">Writing</h2>
+      <a class="more" href="{{ '/blog/' | relative_url }}">All posts</a>
+    </div>
+    {% if site.posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <p class="meta">
+            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%-d %B %Y' }}</time>
+          </p>
+          {% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncate: 180 }}</p>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No posts published yet.</p>
+    {% endif %}
+  </section>
+
+  <section class="section about" aria-labelledby="about-heading">
+    <h2 id="about-heading">About</h2>
+    <p>{{ site.about }}</p>
+  </section>
+</div>
