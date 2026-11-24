@@ -2,7 +2,6 @@
   <title id="phTitle">Portrait placeholder</title>
   <desc id="phDesc">Temporary monogram. A new photograph is being taken.</desc>
   <rect width="400" height="400" fill="#141414"/>
-  <rect x="1" y="1" width="398" height="398" fill="none" stroke="#f5c518" stroke-width="2"/>
-  <text x="200" y="210" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="96" font-weight="700" fill="#f4f4f4">BM</text>
-  <text x="200" y="260" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.18em" fill="#f5c518">PHOTO COMING SOON</text>
+  <text x="200" y="218" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="92" font-weight="650" fill="#f4f4f4">BM</text>
+  <text x="200" y="268" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#a8a8a8">photo coming soon</text>
 </svg>

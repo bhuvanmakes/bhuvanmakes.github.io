@@ -2,10 +2,20 @@
   <div class="wrap">
     <ul class="footer-links">
       {% for item in site.links %}
+        {% if item.url and item.url != "" %}
         <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endif %}
       {% endfor %}
+      {% if site.instagram_url and site.instagram_url != "" %}
+        <li><a href="{{ site.instagram_url }}">Instagram</a></li>
+      {% endif %}
+      {% if site.donate_url and site.donate_url != "" %}
+        <li><a href="{{ site.donate_url }}">Patreon / Donate</a></li>
+      {% endif %}
+      {% if site.collab_url and site.collab_url != "" %}
+        <li><a href="{{ site.collab_url }}">Collaborate</a></li>
+      {% endif %}
     </ul>
-    <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     <p>© {{ 'now' | date: '%Y' }} Bhuvan Makes</p>
   </div>
 </footer>

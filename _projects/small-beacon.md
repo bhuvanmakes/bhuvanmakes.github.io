@@ -1,7 +1,7 @@
 ---
 title: Small Beacon
 order: 4
-status: In progress
+status: in progress
 summary: A LoRa beacon on an ESP32-C3 Super Mini and a Reyax RYLR998. Still in progress — nothing public yet.
 # TODO: Set `github` to the public repository under https://github.com/bhuvanmakes
 # once it is published. Do not link github.com/bhuvanbagwe (those URLs now 404).

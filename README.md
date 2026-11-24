@@ -6,20 +6,20 @@ This copy was prepared locally. It has no Git remote yet. Do not create the GitH
 
 ## Pages
 
-- `/` — landing page (intro, featured projects, writing, about)
-- `/projects/` — all featured projects
+- `/` — landing page (about, then one list of projects and writing)
 - `/projects/algaesense/`, `/projects/morse-monkey/`, `/projects/besos/`, `/projects/small-beacon/`
-- `/blog/` — post list
 - `/blog/algaesense/` — published AlgaeSense write-up
+- `/blog/` and `/projects/` redirect to the home page so old addresses keep working
 - Drafts in `_drafts/` (Morse Monkey, BESOS, Small Beacon) are not built unless you pass `--drafts`
+- `EDITING.md` — how to add or edit a project or write-up
 
 Public identity is **Bhuvan Makes** only. There is no LinkedIn link. OpenExG-C5, AirCalibre and GoodOne are not on this site.
 
 ## Look
 
-The site is dark only: black background, white text, yellow accents, with monospace headings and yellow section rules. Colours and fonts are CSS variables at the top of `assets/css/style.css`, so they are easy to change. There is no light theme.
+The site is dark only: black background, white text, yellow accents. Yellow rules sit under the header and above the footer only. Colours and fonts are CSS variables at the top of `assets/css/style.css`. There is no light theme, no location line, and no email address or `mailto:` link on the site.
 
-Location is not shown until Bhuvan confirms it. The home page has a short About section and a Let's collaborate line with a `mailto:bhuvanmakes@gmail.com` button (no form).
+The home page opens with Bhuvan's about text and a "Wanna collaborate? :)" button (the URL is `collab_url` in `_config.yml`, a placeholder until a form link is added). Projects and writing share one list. To add or change work, see `EDITING.md`.
 
 
 ## Local preview
@@ -61,54 +61,13 @@ Do these steps only after Bhuvan grants access to the **bhuvanmakes** GitHub acc
 
 No custom domain is required. Do not reuse the existing `bhuvanmakes/portfolio` PDF repository as this site.
 
-## Adding a project or a blog post
+## Adding a project or a write-up
 
-Projects live in `_projects/` and use the `project` layout. Posts live in `_posts/` as `YYYY-MM-DD-slug.md` and use the `post` layout. Work-in-progress writing goes in `_drafts/` until it is ready.
-
-Copy the front matter below. Keep list fields as YAML lists. **Leave a field out, or leave it empty, if you do not yet have a real, published URL.** The templates only render kit links that exist, so empty fields will not show a broken link.
-
-```yaml
----
-title: Project name
-# projects only:
-# order: 5
-# status: In progress
-# summary: One sentence used on cards and lists.
-# posts only: the date comes from the filename.
-lede: Optional short introduction.
-hero: /assets/img/projects/example.jpg
-hero_alt: Describe the picture.
-hero_credit: Optional credit, including the source and date.
-
-# Content kit — fill only verified, published links
-instructable:     # one URL, or leave empty
-hackster:         # optional extra write-up
-tweets:           # list of URLs, or omit
-  # - https://x.com/Maker_Bhuvan/status/...
-youtube:          # one long video URL
-instagram_updates:
-  # - https://www.instagram.com/p/...
-shorts:
-  # - https://www.youtube.com/shorts/...
-arxiv:            # one paper URL
-# TODO: Set `github` only after the repo is public at
-# https://github.com/bhuvanmakes/<repo-name>
-# Do not link github.com/bhuvanbagwe — those repositories are private
-# and the URLs now 404.
-github:
-blog:             # path on this site, e.g. /blog/example/
----
-```
-
-Then write the body in Markdown. Use only real, published facts. Label anything planned as planned. Do not invent measurements, awards or subscriber counts.
-
-Add a project photograph under `assets/img/projects/` if you have an honest picture of the built hardware. Use the typographic card placeholder if you do not.
-
-After adding a post, it appears on `/blog/` and on the home page. After adding a project file, it appears on `/projects/` and, if you set `order`, in the featured grid on the home page.
+See `EDITING.md` for the short, plain-language version: which folder to use, the front matter fields, where images go, and how writing shows up in the same home-page list as projects.
 
 ## GitHub links
 
-The header, footer and landing-page buttons link to the public profile <https://github.com/bhuvanmakes>.
+The footer links to the public profile <https://github.com/bhuvanmakes>.
 
 Project and post `github` kit fields are intentionally empty until each repository is published under that account. When a repo goes public, add its `https://github.com/bhuvanmakes/...` URL to the matching project page and blog post, then rebuild.
 

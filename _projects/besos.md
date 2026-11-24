@@ -1,7 +1,7 @@
 ---
 title: BESOS
 order: 3
-status: Documentation in progress
+status: draft
 summary: An open e-ink reader, meant to stay simple. I'm still finishing the write-up.
 # TODO: Set `github` to the public repository under https://github.com/bhuvanmakes
 # once it is published. Do not link github.com/bhuvanbagwe (those URLs now 404).

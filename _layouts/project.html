@@ -3,9 +3,7 @@ layout: default
 ---
 <div class="wrap">
   <article class="project">
-    <p class="kicker"><a href="{{ '/projects/' | relative_url }}">Projects</a></p>
-    {% if page.status %}<p class="badge">{{ page.status }}</p>{% endif %}
-    <h1>{{ page.title }}</h1>
+    <h1>{{ page.title }}{% if page.status and page.status != "" %} <span class="status">{{ page.status }}</span>{% endif %}</h1>
     {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
     {% if page.hero %}
     <figure class="hero-figure">
