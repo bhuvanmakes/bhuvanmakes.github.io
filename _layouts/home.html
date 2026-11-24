@@ -3,10 +3,9 @@ layout: default
 ---
 <div class="wrap">
   <section class="hero">
-    <img class="portrait" src="{{ '/assets/img/placeholder-portrait.svg' | relative_url }}" width="120" height="120" alt="Portrait placeholder. A new photograph is being taken.">
+    <img class="portrait" src="{{ '/assets/img/placeholder-portrait.svg' | relative_url }}" width="72" height="72" alt="Portrait placeholder. A new photograph is being taken.">
     <div>
       <h1>Bhuvan Makes</h1>
-      <p class="location">{{ site.location }}</p>
       <p class="tagline">{{ site.tagline }}</p>
       <div class="actions">
         {% for item in site.hero_links %}
@@ -18,15 +17,15 @@ layout: default
 
   <section class="section" aria-labelledby="featured-heading">
     <div class="section-head">
-      <h2 id="featured-heading">Featured projects</h2>
+      <h2 id="featured-heading">Projects</h2>
       <a class="more" href="{{ '/projects/' | relative_url }}">All projects</a>
     </div>
-    <div class="card-grid">
+    <ul class="project-rows">
       {% assign featured = site.projects | sort: "order" %}
       {% for project in featured %}
         {% include project-card.html project=project %}
       {% endfor %}
-    </div>
+    </ul>
   </section>
 
   <section class="section" aria-labelledby="writing-heading">
@@ -54,5 +53,11 @@ layout: default
   <section class="section about" aria-labelledby="about-heading">
     <h2 id="about-heading">About</h2>
     <p>{{ site.about }}</p>
+  </section>
+
+  <section class="section collaborate" aria-labelledby="collaborate-heading">
+    <h2 id="collaborate-heading">Let's collaborate</h2>
+    <p>{{ site.collaborate }}</p>
+    <a class="btn btn-solid" href="mailto:{{ site.email }}">Email me</a>
   </section>
 </div>

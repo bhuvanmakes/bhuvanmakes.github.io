@@ -13,8 +13,7 @@
 
 title: Bhuvan Makes
 description: >-
-  I design and build hardware end to end — electronics, biosensing,
-  and the messy bits in between.
+  I make hardware — electronics, biosensing, and the messy bits in between.
 url: https://bhuvanmakes.github.io
 baseurl: ""
 lang: en
@@ -24,23 +23,20 @@ author:
   name: Bhuvan Makes
   email: bhuvanmakes@gmail.com
 
-# One-line bio (approved wording, 24 Nov 2026 plan).
+# Short intro. Location is left out until Bhuvan confirms it.
 tagline: >-
-  I design and build hardware end to end — electronics, biosensing,
-  and the messy bits in between.
+  I make hardware — electronics, biosensing, and the messy bits in between.
 
-# Longer About text (approved wording, 24 Nov 2026 plan).
 about: >-
-  I'm Bhuvan Makes, an independent hardware maker and engineering student
-  in Mumbai. I design, prototype and document electronics myself. Recent
-  work includes AlgaeSense, an autonomous algae cultivation system that
-  uses a microscope and on-device vision, plus Morse Monkey, radio and
-  Meshtastic builds, and an open e-ink reader still being documented.
-  I publish write-ups on Instructables and Hackster, and code on GitHub.
-  I also make YouTube videos about making things. For boards, RoadTests
-  or collaborations: bhuvanmakes@gmail.com.
+  I'm Bhuvan Makes. I design, prototype and document electronics myself.
+  Lately that's been AlgaeSense, an algae-growing setup that uses a
+  microscope and on-device vision, plus Morse Monkey, some radio and
+  Meshtastic builds, and an open e-ink reader I'm still writing up.
+  I post build notes on Instructables and Hackster, put code on GitHub,
+  and make YouTube videos about making things.
 
-location: Mumbai
+collaborate: >-
+  If you've got a board to try, a RoadTest, or some other idea, email me.
 
 email: bhuvanmakes@gmail.com
 

@@ -15,6 +15,13 @@ This copy was prepared locally. It has no Git remote yet. Do not create the GitH
 
 Public identity is **Bhuvan Makes** only. There is no LinkedIn link. OpenExG-C5, AirCalibre and GoodOne are not on this site.
 
+## Look
+
+The site is dark only: black background, white text, yellow accents, with monospace headings and yellow section rules. Colours and fonts are CSS variables at the top of `assets/css/style.css`, so they are easy to change. There is no light theme.
+
+Location is not shown until Bhuvan confirms it. The home page has a short About section and a Let's collaborate line with a `mailto:bhuvanmakes@gmail.com` button (no form).
+
+
 ## Local preview
 
 You need Ruby 3, Bundler, and (the first time) a network connection to install gems.

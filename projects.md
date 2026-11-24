@@ -2,16 +2,12 @@
 layout: page
 title: Projects
 permalink: /projects/
-lede: Featured hardware I design, build and document.
+lede: Things I design, build and write about.
 ---
 
 {% assign projects = site.projects | sort: "order" %}
-<ul class="project-list">
+<ul class="project-rows">
 {% for project in projects %}
-  <li>
-    {% if project.status %}<p class="badge">{{ project.status }}</p>{% endif %}
-    <a class="title" href="{{ project.url | relative_url }}">{{ project.title }}</a>
-    <p class="meta">{{ project.summary }}</p>
-  </li>
+  {% include project-card.html project=project %}
 {% endfor %}
 </ul>

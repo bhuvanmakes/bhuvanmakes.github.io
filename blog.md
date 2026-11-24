@@ -2,7 +2,7 @@
 layout: page
 title: Blog
 permalink: /blog/
-lede: Longer write-ups of projects and, later, YouTube videos.
+lede: Longer write-ups of projects, and later, YouTube videos.
 ---
 
 {% if site.posts.size > 0 %}
