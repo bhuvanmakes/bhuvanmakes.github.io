@@ -3,6 +3,8 @@ title: BESOS
 order: 3
 status: draft
 summary: An open e-ink reader, meant to stay simple. I'm still finishing the write-up.
+intro: >-
+  BESOS is an open e-ink reader designed to be simple, easy to use and open. I'm still finishing the documentation, so this page is short for now. There isn't a public write-up or repository on github.com/bhuvanmakes yet.
 # TODO: Set `github` to the public repository under https://github.com/bhuvanmakes
 # once it is published. Do not link github.com/bhuvanbagwe (those URLs now 404).
 # github:

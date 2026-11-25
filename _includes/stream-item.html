@@ -1,6 +1,6 @@
 {%- comment -%}
   One row in the home-page stream (projects and writing together).
-  If the item has a `blog` field, the title and thumb link to that write-up.
+  If the item has a `blog` field, the title, image and 'read more' link to that write-up.
   Otherwise they link to the item's own page.
 {%- endcomment -%}
 {%- assign item = include.item -%}
@@ -9,13 +9,13 @@
 {%- else %}
   {%- assign item_href = item.url | relative_url -%}
 {%- endif -%}
-{%- assign item_line = item.summary | default: item.lede -%}
-<li class="stream-item{% if item.hero %} has-thumb{% endif %}">
-  {%- if item.hero %}
-  <a href="{{ item_href }}">
-    <img class="thumb" src="{{ item.hero | relative_url }}" alt="{{ item.hero_alt | default: item.title }}" width="56" height="56">
+{%- assign item_intro = item.intro | default: item.summary | default: item.lede -%}
+<li class="stream-item">
+  <a class="stream-media{% unless item.hero %} stream-placeholder{% endunless %}" href="{{ item_href }}"{% unless item.hero %} aria-hidden="true" tabindex="-1"{% endunless %}>
+    {%- if item.hero %}
+    <img src="{{ item.hero | relative_url }}" alt="{{ item.hero_alt | default: item.title }}" width="400" height="260">
+    {%- endif %}
   </a>
-  {%- endif %}
   <div class="stream-text">
     <h3>
       <a href="{{ item_href }}">{{ item.title }}</a>
@@ -23,6 +23,7 @@
       <span class="status">{{ item.status }}</span>
       {%- endif %}
     </h3>
-    {% if item_line %}<p>{{ item_line }}</p>{% endif %}
+    {% if item_intro %}<p>{{ item_intro }}</p>{% endif %}
+    <a class="read-more" href="{{ item_href }}">read more</a>
   </div>
 </li>

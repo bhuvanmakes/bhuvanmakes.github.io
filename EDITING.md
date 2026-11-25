@@ -37,7 +37,7 @@ blog:
 
 `status` is optional. If you set it, it shows as a small quiet word next to the title, for example `draft` or `in progress`. Skip it when the project is simply done.
 
-`summary` is the one line under the title on the home page.
+`summary` is a short one-line description. `intro` is the two or three sentence paragraph shown on the home-page list; if you leave it out, the list uses `summary` instead.
 
 `hero` is the thumbnail on the home page and a modest photo on the project page. Skip it if you don't have a picture yet.
 

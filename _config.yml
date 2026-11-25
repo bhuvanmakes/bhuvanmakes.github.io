@@ -40,16 +40,17 @@ donate_url:
 
 # Footer link hub (no LinkedIn, no Hackster, no email).
 # Instagram and Patreon/Donate are appended only when the URLs above are set.
+# Visible text is the platform name only — no usernames or URLs.
 links:
-  - label: GitHub (bhuvanmakes)
+  - label: GitHub
     url: https://github.com/bhuvanmakes
   - label: Instructables
     url: https://www.instructables.com/member/bhuvanmakes/
-  - label: Hackaday (hackaday.io/bhuvanmakes)
+  - label: Hackaday
     url: https://hackaday.io/bhuvanmakes
-  - label: YouTube (@Bhuvanmakes)
+  - label: YouTube
     url: https://www.youtube.com/@Bhuvanmakes
-  - label: X (@Maker_Bhuvan)
+  - label: X
     url: https://x.com/Maker_Bhuvan
 
 permalink: /blog/:title/

@@ -12,7 +12,7 @@
   --accent-hover: #ffe56a;
   --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  --max: 52rem;
+  --max: 58rem;
   --measure: 40rem;
 }
 
@@ -162,10 +162,10 @@ a:hover { color: var(--accent-hover); }
   color: var(--bg);
 }
 
-/* One stream — faint dividers, no yellow rules */
+/* One stream — Hackaday-style feed: big landscape image, text on the right */
 
 .stream {
-  padding: 0.5rem 0 3rem;
+  padding: 0.35rem 0 3rem;
 }
 
 .stream-list {
@@ -176,32 +176,43 @@ a:hover { color: var(--accent-hover); }
 
 .stream-item {
   display: grid;
-  grid-template-columns: 3.5rem 1fr;
-  gap: 0.95rem;
+  grid-template-columns: minmax(15rem, 42%) 1fr;
+  gap: 1.25rem 1.6rem;
   align-items: start;
-  padding: 1.15rem 0;
+  padding: 1.65rem 0;
   border-top: 1px solid var(--faint);
 }
 
 .stream-item:first-child { border-top: 0; }
 
-.stream-text { grid-column: 1 / -1; }
-
-.stream-item.has-thumb .stream-text { grid-column: 2; }
-
-.thumb {
-  width: 3.5rem;
-  height: 3.5rem;
-  object-fit: cover;
+.stream-media {
+  display: block;
+  width: 100%;
   background: var(--bg-elev);
+}
+
+.stream-media img {
+  width: 100%;
+  aspect-ratio: 400 / 260;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.stream-placeholder {
+  aspect-ratio: 400 / 260;
+  background:
+    radial-gradient(ellipse at 28% 18%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 58%),
+    linear-gradient(160deg, #1a1a1a, #101010 55%, #161616);
 }
 
 .stream-item h3 {
   font-family: var(--font-body);
-  font-size: 1.08rem;
+  font-size: 1.35rem;
   font-weight: 650;
-  margin: 0 0 0.2rem;
-  letter-spacing: -0.01em;
+  margin: 0 0 0.45rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .stream-item h3 a {
@@ -219,10 +230,19 @@ a:hover { color: var(--accent-hover); }
 }
 
 .stream-item p {
-  margin: 0;
+  margin: 0 0 0.7rem;
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  max-width: 36rem;
 }
+
+.read-more {
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.read-more:hover { color: var(--accent-hover); }
 
 /* Article / project pages */
 
@@ -401,6 +421,8 @@ article.project h1,
     width: 6.5rem;
     height: 6.5rem;
   }
+
+  .stream-item { grid-template-columns: 1fr; }
 
   .kit .kit-label { min-width: 0; display: block; }
 

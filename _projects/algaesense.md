@@ -2,6 +2,8 @@
 title: AlgaeSense
 order: 1
 summary: A cube that grows Spirulina and watches the culture with a USB microscope, then runs the pumps, lights and aeration from what it sees.
+intro: >-
+  AlgaeSense is a cube that grows Spirulina and looks at the culture itself, not only the water around it. A USB microscope and an Arduino UNO Q run the pumps, lights and aeration from what it sees. The published prototype can sample, image and log on its own; measuring toxins and using readings such as pH or temperature to steer growth is still planned.
 hero: /assets/img/projects/algaesense.jpg
 hero_alt: The AlgaeSense cube tank on a workbench, filled with green culture, with a 3D-printed lid and silicone tubing.
 hero_credit: Photo from the Instructables write-up, published 31 August 2026.
