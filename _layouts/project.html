@@ -26,9 +26,10 @@ layout: default
     </ul>
     {% endif %}
     {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
-    {% if page.hero %}
+    {% assign hero = page.hero | default: page.cover %}
+    {% if hero %}
     <figure class="hero-figure">
-      <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
+      <img src="{{ hero | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
       {% if page.hero_credit %}<figcaption>{{ page.hero_credit }}</figcaption>{% endif %}
     </figure>
     {% endif %}

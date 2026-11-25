@@ -96,6 +96,7 @@ exclude:
   - .bundle
   - .gitignore
   - _unpublished
+  - _templates
 
 sass:
   style: compressed

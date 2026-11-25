@@ -4,7 +4,7 @@
   Lists (tweets, instagram_updates, shorts) render only if they have entries.
 
   Standard kit fields:
-    instructable, tweets, youtube (embed ID or URL), instagram_updates, shorts, arxiv, github, blog
+    instructable, medium, tweets, youtube (embed ID or URL), instagram_updates, shorts, arxiv, paper, github, blog
   Optional extra:
     hackster
 
@@ -17,12 +17,14 @@
 {%- assign shorts = item.shorts -%}
 {%- assign show_kit = false -%}
 {%- if item.instructable and item.instructable != "" %}{% assign show_kit = true %}{% endif -%}
+{%- if item.medium and item.medium != "" %}{% assign show_kit = true %}{% endif -%}
 {%- if item.hackster and item.hackster != "" %}{% assign show_kit = true %}{% endif -%}
 {%- if tweets and tweets.size > 0 %}{% assign show_kit = true %}{% endif -%}
 {%- if item.youtube and item.youtube != "" %}{% assign show_kit = true %}{% endif -%}
 {%- if instagram_updates and instagram_updates.size > 0 %}{% assign show_kit = true %}{% endif -%}
 {%- if shorts and shorts.size > 0 %}{% assign show_kit = true %}{% endif -%}
 {%- if item.arxiv and item.arxiv != "" %}{% assign show_kit = true %}{% endif -%}
+{%- if item.paper and item.paper != "" %}{% assign show_kit = true %}{% endif -%}
 {%- if item.github and item.github != "" %}{% assign show_kit = true %}{% endif -%}
 {%- if item.blog and item.blog != "" %}{% assign show_kit = true %}{% endif -%}
 {%- if show_kit -%}
@@ -31,6 +33,9 @@
   <ul>
     {%- if item.instructable and item.instructable != "" %}
     <li><span class="kit-label">Instructable</span> <a href="{{ item.instructable }}">Write-up</a></li>
+    {%- endif %}
+    {%- if item.medium and item.medium != "" %}
+    <li><span class="kit-label">Medium</span> <a href="{{ item.medium }}">Blog post</a></li>
     {%- endif %}
     {%- if item.hackster and item.hackster != "" %}
     <li><span class="kit-label">Hackster</span> <a href="{{ item.hackster }}">Project page</a></li>
@@ -75,6 +80,9 @@
     {%- endif %}
     {%- if item.arxiv and item.arxiv != "" %}
     <li><span class="kit-label">arXiv paper</span> <a href="{{ item.arxiv }}">Paper</a></li>
+    {%- endif %}
+    {%- if item.paper and item.paper != "" %}
+    <li><span class="kit-label">Paper</span> <a href="{{ item.paper }}">Paper</a></li>
     {%- endif %}
     {%- if item.github and item.github != "" %}
     <li><span class="kit-label">GitHub</span> <a href="{{ item.github }}">Repository</a></li>

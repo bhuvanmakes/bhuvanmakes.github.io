@@ -10,10 +10,11 @@
   {%- assign item_href = item.url | relative_url -%}
 {%- endif -%}
 {%- assign item_intro = item.intro | default: item.summary | default: item.lede -%}
+{%- assign item_hero = item.hero | default: item.cover -%}
 <li class="stream-item">
-  <a class="stream-media{% unless item.hero %} stream-placeholder{% endunless %}" href="{{ item_href }}"{% unless item.hero %} aria-hidden="true" tabindex="-1"{% endunless %}>
-    {%- if item.hero %}
-    <img src="{{ item.hero | relative_url }}" alt="{{ item.hero_alt | default: item.title }}" width="400" height="260">
+  <a class="stream-media{% unless item_hero %} stream-placeholder{% endunless %}" href="{{ item_href }}"{% unless item_hero %} aria-hidden="true" tabindex="-1"{% endunless %}>
+    {%- if item_hero %}
+    <img src="{{ item_hero | relative_url }}" alt="{{ item.hero_alt | default: item.title }}" width="400" height="260">
     {%- endif %}
   </a>
   <div class="stream-text">

@@ -6,9 +6,10 @@ The public site is https://bhuvanmakes.github.io, built from this repository.
 
 ## Pages
 
-- `/` — landing page (about, then one list of projects and writing)
+- `/` — landing page (about, then one list of projects and writing, newest first by date)
 - `/projects/algaesense/` — AlgaeSense write-up
 - `/projects/morse-monkey/` — Morse Monkey
+- `/projects/rtl-sdr-noaa-15/` — Receiving NOAA 15 with an RTL-SDR
 - `/blog/algaesense/` redirects to `/projects/algaesense/`
 - `/blog/` and `/projects/` redirect to the home page so old addresses keep working
 - Unpublished projects live in `_unpublished/` (currently BESOS and Small Beacon) and stay off the public site until they have a published Instructable

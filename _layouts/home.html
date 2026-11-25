@@ -13,9 +13,9 @@ layout: default
 
   <section class="stream" id="work" aria-label="Projects">
     <ul class="stream-list">
-      {% assign stream_projects = site.projects | sort: "order" %}
+      {% assign stream_projects = site.projects | sort: "date" | reverse %}
       {% for project in stream_projects %}
-        {% if project.published != false and project.instructable and project.instructable != "" %}
+        {% if project.published != false %}
           {% include stream-item.html item=project %}
         {% endif %}
       {% endfor %}
