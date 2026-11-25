@@ -1,13 +1,14 @@
+{%- assign dest = page.redirect_to | default: "/" -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
   <title>Redirecting…</title>
-  <link rel="canonical" href="{{ '/' | absolute_url }}">
-  <meta http-equiv="refresh" content="0; url={{ '/' | relative_url }}">
-  <script>location.replace({{ '/' | relative_url | jsonify }})</script>
+  <link rel="canonical" href="{{ dest | absolute_url }}">
+  <meta http-equiv="refresh" content="0; url={{ dest | relative_url }}">
+  <script>location.replace({{ dest | relative_url | jsonify }})</script>
 </head>
 <body>
-  <p><a href="{{ '/' | relative_url }}">Continue to the home page.</a></p>
+  <p><a href="{{ dest | relative_url }}">Continue to {{ dest }}.</a></p>
 </body>
 </html>

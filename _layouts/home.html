@@ -3,34 +3,21 @@ layout: default
 ---
 <div class="wrap">
   <section class="hero">
-    <h1>Bhuvan Makes</h1>
-    <img class="portrait" src="{{ '/assets/img/placeholder-portrait.svg' | relative_url }}" width="176" height="176" alt="Portrait placeholder. A new photograph is being taken.">
+    <h1>About me,</h1>
+    <img class="portrait" src="{{ '/assets/img/placeholder-portrait.svg' | relative_url }}" width="248" height="248" alt="Portrait placeholder. A new photograph is being taken.">
     <div class="about">
       {{ site.about | markdownify }}
     </div>
-    <a class="btn btn-solid" href="{{ site.collab_url }}">Wanna collaborate? :)</a>
+    <a class="btn btn-solid" href="{{ site.collab_url }}">Let's collaborate? :)</a>
   </section>
 
-  <section class="stream" id="work" aria-label="Projects and writing">
+  <section class="stream" id="work" aria-label="Projects">
     <ul class="stream-list">
       {% assign stream_projects = site.projects | sort: "order" %}
       {% for project in stream_projects %}
-        {% include stream-item.html item=project %}
-      {% endfor %}
-      {% for post in site.posts %}
-        {% assign already = false %}
-        {% for project in site.projects %}
-          {% if project.blog and project.blog != "" %}
-            {% assign blog_path = project.blog | relative_url %}
-            {% assign post_path = post.url | relative_url %}
-            {% if blog_path == post_path %}
-              {% assign already = true %}
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-        {% unless already %}
-          {% include stream-item.html item=post %}
-        {% endunless %}
+        {% if project.published != false and project.instructable and project.instructable != "" %}
+          {% include stream-item.html item=project %}
+        {% endif %}
       {% endfor %}
     </ul>
   </section>

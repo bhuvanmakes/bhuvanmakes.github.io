@@ -86,7 +86,7 @@ a:hover { color: var(--accent-hover); }
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr 11rem;
+  grid-template-columns: 1fr 15.5rem;
   grid-template-areas:
     "name photo"
     "about photo"
@@ -110,8 +110,8 @@ a:hover { color: var(--accent-hover); }
 
 .portrait {
   grid-area: photo;
-  width: 11rem;
-  height: 11rem;
+  width: 15.5rem;
+  height: 15.5rem;
   border-radius: 50%;
   object-fit: cover;
   background: var(--bg-elev);
@@ -281,6 +281,39 @@ article.project h1,
   max-width: 40rem;
 }
 
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.85rem;
+  padding: 0;
+}
+
+.tags li {
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 0.12rem 0.45rem;
+}
+
+.video {
+  position: relative;
+  width: 100%;
+  max-width: var(--measure);
+  aspect-ratio: 16 / 9;
+  margin: 0 0 1.5rem;
+  background: #000;
+}
+
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .hero-figure {
   margin: 0 0 1.5rem;
   max-width: 28rem;
@@ -418,8 +451,8 @@ article.project h1,
   }
 
   .portrait {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 8.5rem;
+    height: 8.5rem;
   }
 
   .stream-item { grid-template-columns: 1fr; }

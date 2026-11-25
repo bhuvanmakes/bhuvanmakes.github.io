@@ -1,4 +1,5 @@
 ---
+published: false
 title: Small Beacon
 order: 4
 status: in progress

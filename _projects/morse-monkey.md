@@ -4,7 +4,7 @@ order: 2
 summary: A USB toy monkey that teaches Morse code with lights, a buzzer and one button.
 intro: >-
   Morse Monkey is a USB toy monkey that teaches Morse code with lights, a buzzer and one button. It's built around an ESP32-C3 SuperMini, and there's no display on purpose — a printed cheatsheet comes with it instead. The Instructables write-up went up on 26 October 2026.
-hero: /assets/img/projects/morse-monkey.jpg
+hero: /assets/img/morse-monkey/cover.jpg
 hero_alt: Cover image from the Morse Monkey Instructables write-up, showing a brown, monkey-faced trainer enclosure.
 hero_credit: Cover image from the Instructables write-up, published 26 October 2026.
 instructable: https://www.instructables.com/MorseMonkey-Why-Dont-You-Know-Morse-Code-a-Toy-Mon/

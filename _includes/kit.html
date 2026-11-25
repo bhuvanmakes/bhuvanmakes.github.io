@@ -4,7 +4,7 @@
   Lists (tweets, instagram_updates, shorts) render only if they have entries.
 
   Standard kit fields:
-    instructable, tweets, youtube, instagram_updates, shorts, arxiv, github, blog
+    instructable, tweets, youtube (embed ID or URL), instagram_updates, shorts, arxiv, github, blog
   Optional extra:
     hackster
 
@@ -27,7 +27,7 @@
 {%- if item.blog and item.blog != "" %}{% assign show_kit = true %}{% endif -%}
 {%- if show_kit -%}
 <section class="kit" aria-labelledby="kit-heading-{{ item.title | slugify }}">
-  <h2 id="kit-heading-{{ item.title | slugify }}">Also on</h2>
+  <h2 id="kit-heading-{{ item.title | slugify }}">Further reading</h2>
   <ul>
     {%- if item.instructable and item.instructable != "" %}
     <li><span class="kit-label">Instructable</span> <a href="{{ item.instructable }}">Write-up</a></li>
@@ -46,7 +46,12 @@
     </li>
     {%- endif %}
     {%- if item.youtube and item.youtube != "" %}
-    <li><span class="kit-label">YouTube video</span> <a href="{{ item.youtube }}">Watch</a></li>
+      {%- if item.youtube contains "http" %}
+        {%- assign yt_href = item.youtube -%}
+      {%- else %}
+        {%- assign yt_href = "https://www.youtube.com/watch?v=" | append: item.youtube -%}
+      {%- endif %}
+    <li><span class="kit-label">YouTube video</span> <a href="{{ yt_href }}">Watch</a></li>
     {%- endif %}
     {%- if instagram_updates and instagram_updates.size > 0 %}
     <li>

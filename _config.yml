@@ -95,6 +95,7 @@ exclude:
   - vendor
   - .bundle
   - .gitignore
+  - _unpublished
 
 sass:
   style: compressed

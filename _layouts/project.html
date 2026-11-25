@@ -1,15 +1,41 @@
 ---
 layout: default
 ---
+{%- if page.youtube and page.youtube != "" -%}
+  {%- if page.youtube contains "http" -%}
+    {%- assign yt_id = page.youtube -%}
+    {%- if page.youtube contains "v=" -%}
+      {%- assign yt_id = page.youtube | split: "v=" | last | split: "&" | first -%}
+    {%- elsif page.youtube contains "youtu.be/" -%}
+      {%- assign yt_id = page.youtube | split: "youtu.be/" | last | split: "?" | first -%}
+    {%- elsif page.youtube contains "embed/" -%}
+      {%- assign yt_id = page.youtube | split: "embed/" | last | split: "?" | first -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- assign yt_id = page.youtube -%}
+  {%- endif -%}
+{%- endif -%}
 <div class="wrap">
   <article class="project">
     <h1>{{ page.title }}{% if page.status and page.status != "" %} <span class="status">{{ page.status }}</span>{% endif %}</h1>
-    {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+    {% if page.tags and page.tags.size > 0 %}
+    <ul class="tags" aria-label="Tags">
+      {% for tag in page.tags %}
+        <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
     {% if page.hero %}
     <figure class="hero-figure">
       <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
       {% if page.hero_credit %}<figcaption>{{ page.hero_credit }}</figcaption>{% endif %}
     </figure>
+    {% endif %}
+    {% if yt_id and yt_id != "" %}
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ yt_id }}" title="{{ page.title }} video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+    </div>
     {% endif %}
     <div class="prose">
       {{ content }}

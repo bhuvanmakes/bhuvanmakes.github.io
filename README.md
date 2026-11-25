@@ -2,15 +2,17 @@
 
 Personal site for [Bhuvan Makes](https://bhuvanmakes.github.io), built with Jekyll so GitHub Pages can compile it from the default branch. There is no custom GitHub Actions workflow and no heavy JavaScript framework.
 
-This copy was prepared locally. It has no Git remote yet. Do not create the GitHub repository, push, or change GitHub settings until access to the **bhuvanmakes** account is available and Bhuvan has said to publish.
+The public site is https://bhuvanmakes.github.io, built from this repository.
 
 ## Pages
 
 - `/` — landing page (about, then one list of projects and writing)
-- `/projects/algaesense/`, `/projects/morse-monkey/`, `/projects/besos/`, `/projects/small-beacon/`
-- `/blog/algaesense/` — published AlgaeSense write-up
+- `/projects/algaesense/` — AlgaeSense write-up
+- `/projects/morse-monkey/` — Morse Monkey
+- `/blog/algaesense/` redirects to `/projects/algaesense/`
 - `/blog/` and `/projects/` redirect to the home page so old addresses keep working
-- Drafts in `_drafts/` (Morse Monkey, BESOS, Small Beacon) are not built unless you pass `--drafts`
+- Unpublished projects live in `_unpublished/` (currently BESOS and Small Beacon) and stay off the public site until they have a published Instructable
+- Drafts in `_drafts/` are not built unless you pass `--drafts`
 - `EDITING.md` — how to add or edit a project or write-up
 
 Public identity is **Bhuvan Makes** only. There is no LinkedIn link. OpenExG-C5, AirCalibre and GoodOne are not on this site.
@@ -19,7 +21,7 @@ Public identity is **Bhuvan Makes** only. There is no LinkedIn link. OpenExG-C5,
 
 The site is dark only: black background, white text, yellow accents. Yellow rules sit under the header and above the footer only. Colours and fonts are CSS variables at the top of `assets/css/style.css`. There is no light theme, no location line, and no email address or `mailto:` link on the site.
 
-The home page opens with Bhuvan's about text and a "Wanna collaborate? :)" button (the URL is `collab_url` in `_config.yml`, a placeholder until a form link is added). Projects and writing share one list. To add or change work, see `EDITING.md`.
+The home page opens with Bhuvan's about text and a "Let's collaborate? :)" button (the URL is `collab_url` in `_config.yml`, a placeholder until a form link is added). Projects and writing share one list. To add or change work, see `EDITING.md`.
 
 
 ## Local preview
