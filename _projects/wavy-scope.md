@@ -5,7 +5,7 @@ summary: A portable radio-signal finder using a Ku-band LNB and satellite signal
 intro: >-
   Wavy-Scope repurposes a satellite dish LNB and an analogue satellite finder into a portable radio astronomy instrument. It is designed to make detecting signals from the Sun, the Moon and artificial satellites accessible and hands-on.
 lede: A handheld, retro sci-fi radio-signal finder for curious sky-watchers.
-hero: /assets/img/wavy-scope/cover.jpg
+hero: /assets/img/wavy-scope/cover.png
 hero_alt: Wavy-Scope handheld radio-signal detector.
 hero_credit: Cover photograph from the original Instructable, published 13 October 2025.
 instructable: https://www.instructables.com/Wavy-Scope-Handheld-Signal-Finder-to-Detect-the-Su/
