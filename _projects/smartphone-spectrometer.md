@@ -1,74 +1,54 @@
 ---
 title: A Smartphone-Attached Spectrometer
 date: 2024-07-29
-summary: A compact, 3D-printed spectrometer that clips onto a smartphone and uses a diffraction grating to capture the spectra of different light sources.
+summary: A compact 3D-printed diffraction-grating attachment that turns a smartphone camera into a simple tool for observing light spectra.
 intro: >-
-  I designed a small spectrometer that attaches to a smartphone, making it easier to explore light and colour using a camera most people already have. After more than six design iterations and around eight to ten prototypes, the final clip-on enclosure holds a diffraction grating in a dedicated slot, without adhesive.
-lede: A small clip-on spectrometer for exploring the colours hidden inside light.
+  I designed a small spectrometer that clips onto a smartphone and aligns a diffraction grating with its camera. After multiple design iterations and printed prototypes, the final enclosure holds the grating in a dedicated slot without adhesive.
+lede: A clip-on spectrometer for exploring the colours hidden inside light.
+hero: /assets/img/smartphone-spectrometer/cover.jpg
+hero_alt: The smartphone-attached spectrometer prototype.
+hero_credit: Cover photograph from the original Instructable, published 29 July 2024.
 instructable: https://www.instructables.com/A-Smartphone-Attached-Spectrometer-Education-With-/
 tags:
   - Spectroscopy
-  - 3D printing
   - Optics
+  - 3D printing
 ---
+A spectrum is more than a band of colours. It can reveal information about the light source that produced it. I wanted to make spectroscopy easier to explore with a device many people already own: a smartphone.
 
-The spectrum of colours is more than something beautiful to look at. It is also a tool used in spectroscopy. I wanted to make that idea easier to explore with a device people already carry: a smartphone.
-
-The result is a small, 3D-printed spectrometer module designed to clip onto almost any smartphone and align a diffraction grating with its camera.
+The result is a small 3D-printed module that clips over a smartphone camera and holds a diffraction grating in front of the lens.
 
 ## The idea
 
-A diffraction grating separates incoming light into its component colours. By placing the grating in front of a smartphone camera, the phone can capture the resulting spectrum for observation and analysis.
+A diffraction grating separates incoming light into its component colours. The smartphone camera records the resulting spectrum, which can then be inspected using an application.
 
-The goal was to keep the module compact, easy to make and broadly compatible with smartphones.
+The goal was a compact enclosure that could attach to different smartphones while keeping the grating aligned with the camera.
 
-## Supplies
+## Materials
 
-- A diffraction grating element, or diffraction glasses used for laser shows
+- Diffraction grating element, or diffraction glasses used for laser shows
 - Different light sources for observation
-- Lasers of different wavelengths for calibration and comparison
-- A 3D printer for the enclosure, or laser cutting as an alternative
+- Lasers of different wavelengths for experiments and calibration
+- 3D printer, or access to laser cutting for an alternative enclosure
 
-## Step 1: Design process
+## Design and prototyping
 
-I designed the enclosure in Fusion 360. The main challenge was making it clip onto different smartphones while keeping the grating aligned with the camera.
+I designed the enclosure in Fusion 360. The main challenge was the clip geometry: it had to fit different phones while positioning the grating correctly over the camera.
 
-I went through multiple design iterations, trying to centre the spectra in the camera view, reduce the overall size and make the module easier to use. I also tried to keep the model files small without affecting the printed output.
+I went through more than six design iterations and printed around eight to ten prototypes. These iterations helped refine the overall size, clip and optical alignment.
 
-## Step 2: Prototyping
+The final design is split into three parts: `Base_body`, `Cover_body` and `Text`. The original project supplies the `Base_body.stl` and `Cover_body.stl` files.
 
-I made more than six or seven design iterations and printed around eight to ten prototypes before reaching the final design. The iterations helped refine the clip geometry, the position of the grating and the alignment with the smartphone camera.
+## Installing the grating
 
-## Step 3: 3D printing
+Some early prototypes used adhesive, which could damage the diffraction grating. I changed the design to use a dedicated slit so the grating slides into place without adhesive.
 
-The final design is split into three parts:
+## Recording spectra
 
-- `Base_body`
-- `Cover_body`
-- `Text`
+Attach the module to the smartphone and align it with the primary or macro camera. I used a smartphone stand to keep the phone steady while recording.
 
-The original project provides the `Base_body.stl` and `Cover_body.stl` files for printing.
+The original build uses the SpectraUPB application on Android or iOS to process captured images into spectra. I started with a standard LED bulb, then experimented with a green laser and other light sources.
 
-## Step 4: Insert the diffraction grating
+At the time of publishing, I was also working on an alternative application based on OpenCV for direct spectrum observation on smartphones. That software was still a work in progress.
 
-Some earlier prototypes had a problem: adhesive used during assembly could damage the diffraction grating.
-
-For the final version, I made assembly adhesive-free. The enclosure has a dedicated slit where the diffraction grating can be inserted. This keeps the grating in its intended position and avoids applying adhesive to it.
-
-## Step 5: Start recording
-
-Attach the Small Spectro module to the smartphone and align it with the primary or macro camera. I used a smartphone stand to keep the phone steady while recording.
-
-The original build uses the SpectraUPB Android/iOS application to process the captured images into spectra. I started with a standard LED bulb, then tried a green laser and other light sources.
-
-## Step 6: Outputs and work in progress
-
-The project produced spectra from different light sources. At the time of publishing, I was also working on an alternative application based on OpenCV for direct spectrum observation using smartphones. That software was still in progress.
-
-The hardware is a starting point for making spectroscopy more approachable: a small optical attachment, a smartphone camera and an application for examining the captured spectrum.
-
----
-
-**Original Instructable:** [A Smartphone Attached Spectrometer! Education With Colors of the Rainbow](https://www.instructables.com/A-Smartphone-Attached-Spectrometer-Education-With-/)
-
-*Originally published on Instructables on 29 July 2024.*
+**Original build:** [A Smartphone Attached Spectrometer! Education With Colors of the Rainbow](https://www.instructables.com/A-Smartphone-Attached-Spectrometer-Education-With-/), published 29 July 2024.
