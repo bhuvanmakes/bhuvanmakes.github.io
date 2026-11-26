@@ -5,9 +5,6 @@ summary: A compact, 3D-printed spectrometer that clips onto a smartphone and use
 intro: >-
   I designed a small spectrometer that attaches to a smartphone, making it easier to explore light and colour using a camera most people already have. After more than six design iterations and around eight to ten prototypes, the final clip-on enclosure holds a diffraction grating in a dedicated slot, without adhesive.
 lede: A small clip-on spectrometer for exploring the colours hidden inside light.
-hero: /assets/img/smartphone-spectrometer/cover.jpg
-hero_alt: The 3D-printed Small Spectro module clipped over a smartphone camera.
-hero_credit: Cover image from the Instructables project, published 29 July 2024.
 instructable: https://www.instructables.com/A-Smartphone-Attached-Spectrometer-Education-With-/
 tags:
   - Spectroscopy
