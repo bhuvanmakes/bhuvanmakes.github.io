@@ -5,7 +5,7 @@ summary: A mild-steel pulltrusion machine that turns cut PET bottle strips into 
 intro: >-
   RePoly is a team-built machine for converting PET bottle strips into 3D-printing filament. It uses a heated pulltrusion process and deliberately avoids custom firmware: temperature and motor speed are controlled with standalone industrial controllers.
 lede: Turning discarded PET bottles into filament for another life in a 3D printer.
-hero: /assets/img/repoly/cover.jpg
+hero: /assets/img/repoly/cover.png
 hero_alt: RePoly PET bottle-to-filament recycling machine.
 hero_credit: Cover photograph from the original Instructable, published 8 June 2026.
 instructable: https://www.instructables.com/RePoly-a-Machine-to-Recycle-Polythelene-Plastic-80/
