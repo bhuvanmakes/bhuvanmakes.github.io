@@ -62,25 +62,29 @@ a:hover { color: var(--accent-hover); }
   margin-inline: auto;
 }
 
-/* Header — small, quiet name, yellow line underneath only */
+/* Header — compact image wordmark, yellow line underneath */
 
 .site-header {
   border-bottom: 2px solid var(--accent);
 }
 
 .site-header .wrap {
-  padding: 0.7rem 0;
+  padding: 0.35rem 0;
 }
 
 .wordmark {
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--muted);
+  display: inline-block;
+  width: clamp(145px, 19vw, 180px);
   text-decoration: none;
 }
 
-.wordmark:hover { color: var(--accent); }
+.wordmark img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.wordmark:hover { opacity: 0.88; }
 
 /* Hero / About */
 
