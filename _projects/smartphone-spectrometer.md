@@ -5,7 +5,7 @@ summary: A compact 3D-printed diffraction-grating attachment that turns a smartp
 intro: >-
   I designed a small spectrometer that clips onto a smartphone and aligns a diffraction grating with its camera. After multiple design iterations and printed prototypes, the final enclosure holds the grating in a dedicated slot without adhesive.
 lede: A clip-on spectrometer for exploring the colours hidden inside light.
-hero: /assets/img/smartphone-spectrometer/cover.jpg
+hero: /assets/img/Spectrometer/cover.png
 hero_alt: The smartphone-attached spectrometer prototype.
 hero_credit: Cover photograph from the original Instructable, published 29 July 2024.
 instructable: https://www.instructables.com/A-Smartphone-Attached-Spectrometer-Education-With-/
