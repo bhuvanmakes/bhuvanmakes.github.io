@@ -5,7 +5,7 @@ summary: An open-source, mostly 3D-printed helical lift-based vertical-axis wind
 intro: >-
   HL-VAWT explores a helical, lift-based vertical-axis wind turbine using 3D-printed airfoils and readily available hardware. The prototype is intended for higher-wind environments such as highway slipstreams, railway corridors and hilly regions.
 lede: A 3D-printable helical turbine concept for harvesting wind in high-wind locations.
-hero: /assets/img/hl-vawt/cover.jpg
+hero: /assets/img/hl-vawt/cover.png
 hero_alt: HL-VAWT helical lift-based vertical axis wind turbine prototype.
 hero_credit: Cover photograph from the original Instructable. The PDF lists its publication date as 13 January 2028.
 instructable: https://www.instructables.com/An-Open-Source-Hi-VAWT-Helical-Lift-Based-Vertical/
