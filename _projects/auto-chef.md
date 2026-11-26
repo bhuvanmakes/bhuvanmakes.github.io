@@ -5,7 +5,7 @@ summary: A soup-making robot made by repurposing an Ender 3D printer's heated be
 intro: >-
   Auto-Chef reuses an old FDM 3D printer as an automatic soup-making robot. Its heated bed warms the cooking vessel, a peristaltic pump dispenses water, the printer's motion system moves a stirrer, and a 3D-printed dispenser handles premixes. The machine is operated through G-code, without adding a separate microcontroller.
 lede: What if your old 3D printer could cook soup instead of printing a Benchy?
-hero: /assets/img/auto-chef/cover.jpg
+hero: /assets/img/auto-chef/cover.png
 hero_alt: Auto-Chef robot made by repurposing an old 3D printer.
 hero_credit: Cover photograph from the original Instructable, published 17 March 2025.
 instructable: https://www.instructables.com/Chef-Robot-Made-Using-Old-3d-Printer-Cooking-Soup-/
