@@ -1,89 +1,59 @@
 ---
 title: AlgaeSense
-order: 1
 date: 2026-08-31
-summary: A cube that grows Spirulina and watches the culture with a USB microscope, then runs the pumps, lights and aeration from what it sees.
+summary: An autonomous Spirulina photobioreactor that samples its culture, images it through a USB microscope and adjusts its growing environment.
 intro: >-
-  AlgaeSense is a cube that grows Spirulina and looks at the culture itself, not only the water around it. A USB microscope and an Arduino UNO Q run the pumps, lights and aeration from what it sees. The published prototype can sample, image and log on its own; measuring toxins and using readings such as pH or temperature to steer growth is still planned.
-lede: A microscope-driven photobioreactor that watches Spirulina grow, then acts on what it sees.
+  AlgaeSense is an off-grid photobioreactor concept built around a simple question: can a machine grow and monitor Spirulina with as little daily intervention as possible? This prototype uses an Arduino UNO Q, LED lighting, aeration, a DIY peristaltic pump and a USB microscope to sample and inspect the culture.
+lede: A small autonomous photobioreactor that grows and monitors Spirulina.
 hero: /assets/img/algaesense/cover.jpg
-hero_alt: The AlgaeSense cube tank on a workbench, filled with green culture, with a 3D-printed lid and silicone tubing.
-hero_credit: Photo from the Instructables write-up, published 31 August 2026.
+hero_alt: AlgaeSense photobioreactor prototype.
+hero_credit: Cover photograph from the original Instructable, published 31 August 2026.
 instructable: https://www.instructables.com/AlgaeSense-Grow-Algae-Automatically-As-an-Off-Grid/
-hackster: https://www.hackster.io/bhuvanmakes/algaesense-using-ai-to-grow-and-harvest-algae-autonomously-fee1dd
-# youtube:  # optional YouTube embed ID, once a video is published
-# tags:
-#   - Arduino
-# TODO: Set `github` to the public repository under https://github.com/bhuvanmakes
-# once it is published. Do not link github.com/bhuvanbagwe (those URLs now 404).
-# github:
+tags:
+  - Spirulina
+  - Photobioreactor
+  - Arduino UNO Q
 ---
+Food independence is one of the harder parts of living off-grid. AlgaeSense explores a compact alternative to conventional crop growing: cultivating Spirulina, a fast-growing photosynthetic cyanobacterium, in a controlled tank.
 
-AlgaeSense is a machine for growing algae on its own. The Instructables write-up calls it an AI-enabled photobioreactor: a water container with nutrients, light and carbon dioxide, plus something that can make growing decisions as conditions change.
+The goal is an autonomous photobioreactor. LEDs provide light, an aerator mixes the culture and introduces air, and nutrients support growth. The prototype is designed around a 10-litre culture system.
 
-The culture is *Arthrospira*, or Spirulina. The Instructables build is clear that this is not something to scoop from a random pond. Spirulina lives in highly alkaline water, and a wild sample can be contaminated. The write-up treats the reactor as a way to grow a protein-rich food source more carefully, including off-grid.
+## Hardware
 
-## Watching the algae, not only the water
+The Instructable lists an Arduino UNO Q, a BO motor used for the peristaltic pump, an aerator motor, four 5 V 1 W COB LEDs and a temperature probe. A pH sensor and TDS sensor are listed as future additions.
 
-Ordinary sensors can report pH, temperature or turbidity. They don't show what is happening to the cells themselves. AlgaeSense periodically pumps a small sample into a viewing chamber and looks at it with a USB microscope.
+I sourced a 50 ml Spirulina mother culture and nutrients from Algreen. The write-up recommends starting with a clean mother culture rather than collecting unknown algae from the wild.
 
-From those images, the system is described as tracking changes in filament density, morphology and the overall look of the culture, and flagging unusual organisms that may suggest contamination. It can't detect toxins such as microcystins, or heavy metals and dissolved chemical contaminants. The Hackster project page calls this an early warning system, not a chemical assay.
+## Building the tank
 
-## The cube
+I designed the enclosure in Fusion 360 and laser-cut the acrylic sheets. The first attempt to join the sheets with silicone adhesive leaked repeatedly, so sealing the tank became an iterative part of the build. The CAD files are included with the original project.
 
-The current enclosure is a cube. Electronics sit in a 3D-printed housing above the tank, and the growth lights are built into that housing. I designed the CAD in Fusion 360, then laser-cut acrylic sheets and joined them with silicone adhesive. A 3D-printed peristaltic pump pulls culture through food-safe silicone tubing into the microscope chamber.
+## Sampling the culture
 
-The same write-ups say the electronics don't have to live on that particular tank. The probes, aerator and pump lines can be dropped into another container.
+One of the central ideas is a dedicated 3D-printed viewing chamber. Food-safe tubing runs from the tank through a DIY peristaltic pump and into the chamber. An acrylic viewing slit lets the USB microscope observe the sample.
 
-Published hardware on the Hackster page includes:
+The pump fills the chamber, then stops for five seconds so the sample can settle. The microscope captures multiple frames for analysis before the culture is returned to its normal aeration cycle.
 
-- Arduino UNO Q
-- a 3D-printed peristaltic pump driven by a DC motor
-- a 12 V aeration motor, also used as an agitator
-- four 1 W white growth LEDs
-- a USB microscope module
-- a USB PD extender hub
-- an L298N motor driver
+## Microscope and image analysis
 
-## A split brain
+I modified the focus of an inexpensive USB electronics microscope by shifting its focus position. This produced images usable for the project's video object-detection model.
 
-The Arduino UNO Q is used because it has two sides. The microcontroller can run pumps, LEDs, aeration and sensors. The Linux side handles the microscope, OpenCV, logging and higher-level decisions.
+The Instructable describes a dataset of around 100 manually labelled images, including Spirulina at different sizes and orientations, as well as possible contaminants. The model is used to detect Spirulina, identify possible contaminants and assess the sample using its appearance and coverage.
 
-The sampling sequence on the Hackster page is:
+## Current operating sequence
 
-1. Aeration off
-2. Sample pump on
-3. Viewing chamber fills
-4. Sample settles
-5. Microscope captures images
-6. Aeration resumes
+The published algorithm:
+1. Checks day/night timing and culture age.
+2. Runs the LEDs during the configured day period.
+3. Keeps aeration running to mix the culture.
+4. Samples at fixed intervals using the peristaltic pump.
+5. Waits for the microscope sample to settle.
+6. Captures several microscope images.
+7. Detects Spirulina and possible contaminants.
+8. Counts detections and estimates algae area or coverage.
+9. Compares results with earlier samples to estimate growth stage.
+10. Adjusts lighting, logs results and repeats the cycle.
 
-Aeration is stopped first so bubbles and movement don't spoil the image.
+The Instructable presents this as a working autonomous prototype. It also notes that pH and TDS sensing are future additions. The longer-term aim is to make the reactor more capable of optimising growth with less manual attention.
 
-The OpenCV path described there is contrast enhancement, noise reduction, thresholding, morphological filtering, contour detection and measurement. The measurements include algae-covered area, filament count, contour size and approximate morphology changes between samples.
-
-The full monitoring cycle is written as: grow, stop aeration, sample, settle, image, analyse, read sensors, decide, actuate, log, then repeat.
-
-## What the prototype actually shows
-
-The Hackster results list is careful, and it's the one I'm sticking to. The prototype currently demonstrates:
-
-1. Automated culture sampling
-2. Controlled microscope imaging
-3. OpenCV-based algae detection
-4. Pump and aerator control
-5. LED intensity control
-6. Communication between the Linux and microcontroller sides
-7. Automatic logging of measurements
-
-The important part is that these bits run together as one repeatable cycle — not that harvesting or fully automatic yield optimisation is already finished.
-
-The Instructables write-up also has notes on microscope focus, a training set of around 100 images, and a confusion matrix from model training. I'm not repeating accuracy numbers here, because the published extract doesn't give a complete results table.
-
-## What comes next
-
-The next stage described on Hackster is to collect longer-term growth data — pH, temperature, turbidity, light, aeration, an image-derived biomass estimate and growth rate — and use those variables to tune the growing conditions automatically. The larger aim is a compact system that can grow and monitor algae with little day-to-day attention, and that can scale from a desk-sized cube toward larger setups mainly by changing parameters and hardware interfaces.
-
-The build is up as an 11-step Instructable (31 August 2026) and as a Hackster project (19 October 2026). Software for the project has been documented as LGPL-2.1. A public repository under [github.com/bhuvanmakes](https://github.com/bhuvanmakes) is planned and isn't linked here yet.
-
-This is all from those published write-ups. No subscriber counts, contest results or unpublished measurements are included.
+**Original build:** [AlgaeSense on Instructables](https://www.instructables.com/AlgaeSense-Grow-Algae-Automatically-As-an-Off-Grid/), published 31 August 2026.
